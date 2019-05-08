@@ -32,7 +32,7 @@ services:
       SYNLITE_SYSLOG_TCP_PORT: "1514"
       SYNLITE_SYSLOG_UDP_PORT: "1514"
       SYNLITE_SYSLOG_ES_HOSTS: "elasticsearch"
-      SYNLITE_SYSLOG_SYSLOG_TZ: "Pacific/Auckland"
+      SYNLITE_SYSLOG_TZ: "Pacific/Auckland"
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.7.0
