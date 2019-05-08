@@ -1,0 +1,2 @@
+- pipeline.id: synesis_lite_syslog
+  path.config: "/etc/logstash/synesis_lite_syslog/conf.d"
