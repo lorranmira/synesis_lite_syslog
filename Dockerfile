@@ -15,7 +15,7 @@
 # Robert Cowart are Copyright (C)2019 Robert Cowart. All Rights Reserved.
 #------------------------------------------------------------------------------
 
-FROM docker.elastic.co/logstash/logstash-oss:7.0.1
+FROM docker.elastic.co/logstash/logstash-oss:7.1.0
 
 ARG BUILD_DATE
 
@@ -24,7 +24,7 @@ LABEL org.opencontainers.image.created="$BUILD_DATE" \
       org.opencontainers.image.url="https://github.com/robcowart/synesis_lite_syslog/DOCKER.md" \
       org.opencontainers.image.documentation="https://github.com/robcowart/synesis_lite_syslog/README.md" \
       org.opencontainers.image.source="https://github.com/robcowart/synesis_lite_syslog" \
-      org.opencontainers.image.version="v1.1.0_7.0.1" \
+      org.opencontainers.image.version="v1.1.0_7.1.0" \
       org.opencontainers.image.vendor="Robert Cowart" \
       org.opencontainers.image.title="sýnesis™ Lite for Syslog - Logstash" \
       org.opencontainers.image.description=""

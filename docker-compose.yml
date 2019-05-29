@@ -19,7 +19,7 @@ version: '3'
 
 services:
   synlite-elasticsearch-oss:
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.0.1
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.1.0
     container_name: synlite-elasticsearch-oss
     restart: 'no'
     ulimits:
@@ -27,9 +27,9 @@ services:
         soft: -1
         hard: -1
     ports: [ '9200:9200' ]
-      volumes:
-        # persistent data
-        - es_data:/usr/share/elasticsearch/data
+    volumes:
+      # persistent data
+      - es_data:/usr/share/elasticsearch/data
     environment:
       # JVM Heap size
       #   - this should be at least 2GB for simple testing, receiving only a few flows per second.
@@ -50,7 +50,7 @@ services:
       action.destructive_requires_name: 'true'
 
   synlite-kibana-oss:
-    image: docker.elastic.co/kibana/kibana-oss:7.0.1
+    image: docker.elastic.co/kibana/kibana-oss:7.1.0
     container_name: synlite-kibana-oss
     restart: 'no'
     depends_on:
@@ -67,7 +67,9 @@ services:
       LOGGING_QUIET: 'true'
 
   synlite-syslog-logstash-oss:
-    image: robcowart/synlite-syslog-logstash-oss:1.1.0_7.0.1
+    image: robcowart/synlite-syslog-logstash-oss:1.1.0_7.1.0
+    # build:
+    #   context: .
     container_name: synlite-syslog-logstash-oss
     restart: 'no'
     depends_on:
@@ -115,7 +117,7 @@ services:
       # Whether to use the timestamp from the received message to set @timestamp.
       SYNLITE_SYSLOG_MSG_TIMESTAMP: 'true'
       # The timezone of the timestamp of the incoming messages.
-      SYNLITE_SYSLOG_TZ: 'UTC'
+      SYNLITE_SYSLOG_TZ: 'Pacific/Auckland'
 
 # Volumes for persisting data, see https://docs.docker.com/engine/admin/volumes/volumes/
 volumes:
